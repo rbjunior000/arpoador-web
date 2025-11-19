@@ -189,6 +189,14 @@ export default function ReservaCheckout() {
                     </div>
                   </div>
 
+                  <div className="rounded-lg bg-blue-50 p-4 text-sm text-blue-900 dark:bg-blue-950 dark:text-blue-100">
+                    <p className="mb-2 font-bold">💰 Política de Pagamento:</p>
+                    <ul className="ml-4 list-disc space-y-1">
+                      <li>50% do valor total será cobrado agora para confirmar a reserva.</li>
+                      <li>Os 50% restantes deverão ser pagos no check-in na pousada.</li>
+                    </ul>
+                  </div>
+
                   <div className="rounded-lg bg-muted p-4 text-sm">
                     <p className="mb-2 font-medium">📋 Informações Importantes:</p>
                     <ul className="ml-4 list-disc space-y-1 text-muted-foreground">

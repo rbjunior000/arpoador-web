@@ -91,11 +91,18 @@ export const StripeCheckout = ({ open, onClose, onSuccess, amount }: StripeCheck
 
         {!isSuccess ? (
           <form onSubmit={handleSubmit} className="space-y-4">
-            <div className="rounded-lg bg-muted p-4">
+            <div className="rounded-lg bg-muted p-4 space-y-2">
               <div className="flex items-center justify-between">
-                <span className="text-sm text-muted-foreground">Total a pagar:</span>
-                <span className="text-2xl font-bold">{formatPrice(amount)}</span>
+                <span className="text-sm text-muted-foreground">Valor Total:</span>
+                <span className="text-sm font-medium">{formatPrice(amount)}</span>
               </div>
+              <div className="flex items-center justify-between pt-2 border-t">
+                <span className="text-sm font-semibold">Pagar Agora (50%):</span>
+                <span className="text-2xl font-bold text-primary">{formatPrice(amount / 2)}</span>
+              </div>
+              <p className="text-xs text-muted-foreground mt-1">
+                O restante será cobrado no check-in.
+              </p>
             </div>
 
             <div className="space-y-4">
@@ -157,7 +164,7 @@ export const StripeCheckout = ({ open, onClose, onSuccess, amount }: StripeCheck
                 Cancelar
               </Button>
               <Button type="submit" disabled={isProcessing} className="flex-1">
-                {isProcessing ? "Processando..." : `Pagar ${formatPrice(amount)}`}
+                {isProcessing ? "Processando..." : `Pagar ${formatPrice(amount / 2)}`}
               </Button>
             </div>
           </form>
