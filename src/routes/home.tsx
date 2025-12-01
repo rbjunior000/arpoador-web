@@ -11,8 +11,8 @@ export default function Home() {
       <section className="relative h-[600px] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img
-            src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=1920&auto=format&fit=crop"
-            alt="Pousada"
+            src="/images/areas-comuns/IMG_6213.PNG"
+            alt="Pousada Arpoador - Área Comum"
             className="h-full w-full object-cover brightness-75"
           />
         </div>
@@ -30,7 +30,11 @@ export default function Home() {
                 Fazer Reserva
               </Button>
             </Link>
-            <Button size="lg" variant="outline" className="text-lg px-8 py-6 bg-white/10 hover:bg-white/20 text-white border-white">
+            <Button
+              size="lg"
+              variant="outline"
+              className="text-lg px-8 py-6 bg-white/10 hover:bg-white/20 text-white border-white"
+            >
               <MapPin className="mr-2 h-5 w-5" />
               Ver Localização
             </Button>
@@ -48,7 +52,9 @@ export default function Home() {
                   <Star className="h-8 w-8 text-primary" />
                 </div>
               </div>
-              <h3 className="mb-2 text-xl font-semibold">Excelência em Hospedagem</h3>
+              <h3 className="mb-2 text-xl font-semibold">
+                Excelência em Hospedagem
+              </h3>
               <p className="text-muted-foreground">
                 Quartos confortáveis e bem equipados para sua estadia perfeita
               </p>
@@ -59,7 +65,9 @@ export default function Home() {
                   <MapPin className="h-8 w-8 text-primary" />
                 </div>
               </div>
-              <h3 className="mb-2 text-xl font-semibold">Localização Privilegiada</h3>
+              <h3 className="mb-2 text-xl font-semibold">
+                Localização Privilegiada
+              </h3>
               <p className="text-muted-foreground">
                 Pertinho das melhores praias e pontos turísticos
               </p>
@@ -106,7 +114,9 @@ export default function Home() {
       {/* CTA Section */}
       <section className="py-20 bg-primary text-primary-foreground">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="mb-4 text-4xl font-bold">Pronto para sua próxima aventura?</h2>
+          <h2 className="mb-4 text-4xl font-bold">
+            Pronto para sua próxima aventura?
+          </h2>
           <p className="mb-8 text-xl opacity-90">
             Reserve agora e garanta as melhores tarifas
           </p>

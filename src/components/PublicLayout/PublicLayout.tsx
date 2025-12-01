@@ -12,7 +12,7 @@ export const PublicLayout = ({ children }: PublicLayoutProps) => {
       <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
         <div className="container mx-auto flex h-16 items-center justify-between px-4">
           <Link to="/" className="flex items-center space-x-2">
-            <span className="text-2xl font-bold text-primary">Pousada Arpoador</span>
+            <img src="/logo.jpg" alt="Pousada Arpoador" className="h-12 w-auto object-contain" />
           </Link>
           <nav className="flex items-center gap-4">
             <Link to="/">

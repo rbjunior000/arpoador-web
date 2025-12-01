@@ -10,7 +10,11 @@ export type Room = {
   amenities: string[];
 };
 
-export type ReservationStatus = "pending" | "confirmed" | "cancelled" | "completed";
+export type ReservationStatus =
+  | "pending"
+  | "confirmed"
+  | "cancelled"
+  | "completed";
 
 export type Reservation = {
   id: string;
@@ -31,52 +35,90 @@ export type Reservation = {
 // Mock de quartos disponíveis
 export const mockRooms: Room[] = [
   {
-    id: "quarto-1",
-    name: "Suíte Master",
-    description: "Quarto espaçoso com vista para o mar, cama king size e varanda privativa. Ideal para casais em lua de mel.",
+    id: "suite-master-vista-mar",
+    name: "Suíte Master com Vista Mar",
+    description:
+      "Experiência premium com vista panorâmica para o oceano. Quarto espaçoso com cama King Size, varanda privativa e decoração rústica-chique que harmoniza com a brisa do mar.",
     capacity: 2,
-    pricePerNight: 450,
+    pricePerNight: 650,
     images: [
-      "https://images.unsplash.com/photo-1611892440504-42a792e24d32?w=800&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=800&auto=format&fit=crop",
+      "/images/bungalows-kite-lagon/IMG_6208.PNG",
+      "/images/bungalows-kite-lagon/IMG_6209.PNG",
+      "/images/bungalows-kite-lagon/IMG_6210.PNG",
+      "/images/bungalows-kite-lagon/IMG_6211.PNG",
     ],
-    amenities: ["Wi-Fi", "Ar condicionado", "TV a cabo", "Frigobar", "Vista para o mar"],
+    amenities: [
+      "Vista para o Mar",
+      "Ar Condicionado",
+      "Wi-Fi Grátis",
+      "Frigobar",
+      "Varanda Privativa",
+      "Café da Manhã Incluso",
+    ],
   },
   {
-    id: "quarto-2",
-    name: "Quarto Standard",
-    description: "Quarto confortável com cama de casal, perfeito para uma estadia tranquila.",
-    capacity: 2,
-    pricePerNight: 280,
-    images: [
-      "https://images.unsplash.com/photo-1590490360182-c33d57733427?w=800&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1566665797739-1674de7a421a?w=800&auto=format&fit=crop",
-    ],
-    amenities: ["Wi-Fi", "Ar condicionado", "TV", "Frigobar"],
-  },
-  {
-    id: "quarto-3",
-    name: "Quarto Família",
-    description: "Amplo quarto familiar com duas camas de casal, ideal para famílias com crianças.",
+    id: "chale-familia",
+    name: "Chalé Família",
+    description:
+      "Perfeito para famílias, este chalé oferece conforto e espaço. Acomoda até 4 pessoas com uma cama de casal e duas de solteiro, além de um pátio privativo para momentos de lazer.",
     capacity: 4,
     pricePerNight: 550,
     images: [
-      "https://images.unsplash.com/photo-1598928506311-c55ded91a20c?w=800&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?w=800&auto=format&fit=crop",
+      "/images/pousada/IMG_6203.PNG",
+      "/images/pousada/IMG_6204.PNG",
+      "/images/pousada/IMG_6205.PNG",
     ],
-    amenities: ["Wi-Fi", "Ar condicionado", "TV a cabo", "Frigobar", "Varanda", "Berço disponível"],
+    amenities: [
+      "Pátio Privativo",
+      "Ar Condicionado",
+      "Wi-Fi Grátis",
+      "TV Smart",
+      "Rede de Descanso",
+      "Área de Estar",
+    ],
   },
   {
-    id: "quarto-4",
-    name: "Chalé Luxo",
-    description: "Chalé independente com jacuzzi privativa, sala de estar e vista panorâmica.",
-    capacity: 3,
-    pricePerNight: 780,
+    id: "bangalo-rustico",
+    name: "Bangalô Rústico",
+    description:
+      "Charme e aconchego em meio à natureza. Bangalô construído com materiais locais, oferecendo uma autêntica experiência de praia com todo o conforto moderno.",
+    capacity: 2,
+    pricePerNight: 380,
     images: [
-      "https://images.unsplash.com/photo-1618773928121-c32242e63f39?w=800&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=800&auto=format&fit=crop",
+      "/images/pousada/IMG_6206.PNG",
+      "/images/pousada/IMG_6207.PNG",
+      "/images/areas-comuns/IMG_6216.PNG",
     ],
-    amenities: ["Wi-Fi", "Ar condicionado", "TV Smart", "Frigobar", "Jacuzzi", "Vista panorâmica", "Sala de estar"],
+    amenities: [
+      "Jardim Privativo",
+      "Ventilador de Teto",
+      "Wi-Fi Grátis",
+      "Frigobar",
+      "Mosquiteiro",
+      "Varanda Térrea",
+    ],
+  },
+  {
+    id: "suite-standard",
+    name: "Suíte Standard",
+    description:
+      "Conforto e praticidade para sua estadia. Quarto acolhedor com todas as comodidades essenciais para relaxar após um dia de praia em Tutóia.",
+    capacity: 2,
+    pricePerNight: 280,
+    images: [
+      "/images/bungalow-standard/IMG_6199.PNG",
+      "/images/bungalow-standard/IMG_6200.PNG",
+      "/images/bungalow-standard/IMG_6201.PNG",
+      "/images/bungalow-standard/IMG_6202.PNG",
+    ],
+    amenities: [
+      "Ar Condicionado",
+      "Wi-Fi Grátis",
+      "TV",
+      "Chuveiro Elétrico",
+      "Armário",
+      "Mesa de Trabalho",
+    ],
   },
 ];
 
@@ -84,8 +126,8 @@ export const mockRooms: Room[] = [
 export const mockReservations: Reservation[] = [
   {
     id: "res-001",
-    roomId: "quarto-1",
-    roomName: "Suíte Master",
+    roomId: "suite-master-vista-mar",
+    roomName: "Suíte Master com Vista Mar",
     guestName: "Maria Silva",
     guestEmail: "maria.silva@email.com",
     guestPhone: "(11) 99999-1111",
@@ -93,14 +135,14 @@ export const mockReservations: Reservation[] = [
     checkIn: format(addDays(new Date(), -5), "yyyy-MM-dd"),
     checkOut: format(addDays(new Date(), -2), "yyyy-MM-dd"),
     numberOfGuests: 2,
-    totalPrice: 1350,
+    totalPrice: 1950,
     status: "completed",
     createdAt: format(addDays(new Date(), -10), "yyyy-MM-dd'T'HH:mm:ss"),
   },
   {
     id: "res-002",
-    roomId: "quarto-3",
-    roomName: "Quarto Família",
+    roomId: "chale-familia",
+    roomName: "Chalé Família",
     guestName: "João Santos",
     guestEmail: "joao.santos@email.com",
     guestPhone: "(21) 98888-2222",
@@ -114,8 +156,8 @@ export const mockReservations: Reservation[] = [
   },
   {
     id: "res-003",
-    roomId: "quarto-4",
-    roomName: "Chalé Luxo",
+    roomId: "bangalo-rustico",
+    roomName: "Bangalô Rústico",
     guestName: "Ana Paula Costa",
     guestEmail: "ana.costa@email.com",
     guestPhone: "(31) 97777-3333",
@@ -123,14 +165,14 @@ export const mockReservations: Reservation[] = [
     checkIn: format(addDays(new Date(), 7), "yyyy-MM-dd"),
     checkOut: format(addDays(new Date(), 10), "yyyy-MM-dd"),
     numberOfGuests: 2,
-    totalPrice: 2340,
+    totalPrice: 1140,
     status: "confirmed",
     createdAt: format(addDays(new Date(), -3), "yyyy-MM-dd'T'HH:mm:ss"),
   },
   {
     id: "res-004",
-    roomId: "quarto-2",
-    roomName: "Quarto Standard",
+    roomId: "suite-standard",
+    roomName: "Suíte Standard",
     guestName: "Carlos Oliveira",
     guestEmail: "carlos.oliveira@email.com",
     guestPhone: "(41) 96666-4444",
@@ -158,7 +200,9 @@ export const getAllReservations = (): Reservation[] => {
   return [...mockReservations, ...stored];
 };
 
-export const saveReservation = (reservation: Omit<Reservation, "id" | "createdAt">): Reservation => {
+export const saveReservation = (
+  reservation: Omit<Reservation, "id" | "createdAt">
+): Reservation => {
   const newReservation: Reservation = {
     ...reservation,
     id: `res-${Date.now()}`,
@@ -167,7 +211,7 @@ export const saveReservation = (reservation: Omit<Reservation, "id" | "createdAt
 
   const stored = getStoredReservations();
   const updated = [...stored, newReservation];
-  
+
   if (typeof window !== "undefined") {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(updated));
   }
@@ -176,16 +220,24 @@ export const saveReservation = (reservation: Omit<Reservation, "id" | "createdAt
 };
 
 export const getRoomById = (id: string): Room | undefined => {
-  return mockRooms.find(room => room.id === id);
+  return mockRooms.find((room) => room.id === id);
 };
 
-export const calculateTotalPrice = (pricePerNight: number, checkIn: Date, checkOut: Date): number => {
-  const nights = Math.ceil((checkOut.getTime() - checkIn.getTime()) / (1000 * 60 * 60 * 24));
+export const calculateTotalPrice = (
+  pricePerNight: number,
+  checkIn: Date,
+  checkOut: Date
+): number => {
+  const nights = Math.ceil(
+    (checkOut.getTime() - checkIn.getTime()) / (1000 * 60 * 60 * 24)
+  );
   return pricePerNight * nights;
 };
 
 export const calculateNights = (checkIn: Date, checkOut: Date): number => {
-  return Math.ceil((checkOut.getTime() - checkIn.getTime()) / (1000 * 60 * 60 * 24));
+  return Math.ceil(
+    (checkOut.getTime() - checkIn.getTime()) / (1000 * 60 * 60 * 24)
+  );
 };
 
 // Simular disponibilidade (sempre retorna disponível para MVP)
@@ -204,6 +256,5 @@ export const getAvailableRooms = (
   numberOfGuests: number
 ): Room[] => {
   // No MVP, filtra apenas por capacidade
-  return mockRooms.filter(room => room.capacity >= numberOfGuests);
+  return mockRooms.filter((room) => room.capacity >= numberOfGuests);
 };
-
